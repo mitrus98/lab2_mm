@@ -14,6 +14,7 @@
 		3F4B99B02BDD4B4A00EF3832 /* lab2_mmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B99AF2BDD4B4A00EF3832 /* lab2_mmTests.swift */; };
 		3F4B99BA2BDD4B4A00EF3832 /* lab2_mmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B99B92BDD4B4A00EF3832 /* lab2_mmUITests.swift */; };
 		3F4B99BC2BDD4B4A00EF3832 /* lab2_mmUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B99BB2BDD4B4A00EF3832 /* lab2_mmUITestsLaunchTests.swift */; };
+		3F4B99C92BDD50BC00EF3832 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4B99C82BDD50BC00EF3832 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		3F4B99B52BDD4B4A00EF3832 /* lab2_mmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lab2_mmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F4B99B92BDD4B4A00EF3832 /* lab2_mmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lab2_mmUITests.swift; sourceTree = "<group>"; };
 		3F4B99BB2BDD4B4A00EF3832 /* lab2_mmUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lab2_mmUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3F4B99C82BDD50BC00EF3832 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				3F4B999E2BDD4B4700EF3832 /* lab2_mmApp.swift */,
 				3F4B99A02BDD4B4700EF3832 /* ContentView.swift */,
+				3F4B99C82BDD50BC00EF3832 /* CardView.swift */,
 				3F4B99A22BDD4B4900EF3832 /* Assets.xcassets */,
 				3F4B99A42BDD4B4900EF3832 /* Preview Content */,
 			);
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F4B99A12BDD4B4700EF3832 /* ContentView.swift in Sources */,
+				3F4B99C92BDD50BC00EF3832 /* CardView.swift in Sources */,
 				3F4B999F2BDD4B4700EF3832 /* lab2_mmApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

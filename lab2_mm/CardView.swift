@@ -8,11 +8,30 @@
 import SwiftUI
 
 struct CardView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+    @State var isFaceUp: Bool = false
+    var content: String
+    let base: RoundedRectangle = RoundedRectangle(cornerRadius: 12)
 
-#Preview {
-    CardView()
+    init(content: String, isFaceUp: Bool){
+        self.content = content
+        self.isFaceUp = isFaceUp
+    }
+    
+    var body: some View {
+        ZStack{
+            Group{
+                base.fill(.white)
+                base.strokeBorder(style: StrokeStyle(lineWidth: 2))
+
+                Text(content)
+                    .font(.largeTitle)
+            }
+            .opacity(isFaceUp ? 1 : 0)
+
+            base.fill().opacity(isFaceUp ? 0 : 1)
+        }
+        .onTapGesture {
+            isFaceUp.toggle()
+        }
+    }
 }
