@@ -21,8 +21,11 @@ struct ContentView: View {
             viewCard
             Spacer()
             HStack{
+                removeCard
                 Spacer()
+                addCard
             }
+            
         }
         .padding()
     }
@@ -53,6 +56,23 @@ struct ContentView: View {
         
     }
     
+    func adjustCardNumber(by offset: Int, symbol: String) -> some View{
+        Button(action: {
+            numberCard += offset
+        }, label: {
+            Image(systemName: symbol)
+                .font(.largeTitle)
+        })
+        .disabled(numberCard + offset < 2 || numberCard + offset > cardChooser().0.count)
+    }
+
+    var addCard: some View{
+        return adjustCardNumber(by: 2, symbol: "plus.rectangle")
+    }
+    
+    var removeCard: some View{
+        return adjustCardNumber(by: -2, symbol: "minus.rectangle")
+    }
 }
 
 
