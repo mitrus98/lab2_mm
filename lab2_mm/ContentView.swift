@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State var tNumer = 1
     @State var tColor = Color.blue
-    let emojis1 = ["😀","😇","😄","🤣","🤪","😎","😭","😤","🤠","🤢","👿","😷","😅"]
+    let emojis1 = ["😀","😇","😄","🤣","🤪","😎","😭","😤","🤠","🤢","👿","😷","😅","🐣"]
     let emojis2 = ["💀","👻","👽","😸","👾","👹","🤡","🤖","🎃","👄","🦷","👅","🫁","👤","🫂","👁️","🦿","✍️","💩","👖"]
     let emojis3 = ["🐶","🐱","🐭","🐹","🐰","🦊","🐻","🐼","🐻‍❄️","🐨","🐯","🦁","🐮","🐷","🐽","🐸","🐵","🙈","🙉","🙊","🐒","🐔","🐦","🐣","🦆","🐝","🪱"]
     @State var numberCard = 4
@@ -19,21 +19,18 @@ struct ContentView: View {
         VStack {
             Text("Memo").font(.largeTitle)
             viewCard
-            Spacer()
             HStack{
                 removeCard
                 Spacer()
                 addCard
             }
-            
         }
         .padding()
     }
-
     
     var viewCard: some View{
         ScrollView{
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 80))]){
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 60))]){
                 ForEach(0..<cardChooser().1, id: \.self){
                     index in CardView(content: cardChooser().0[index], isFaceUp: false).aspectRatio(2/3, contentMode: .fit)
                 }
@@ -56,22 +53,22 @@ struct ContentView: View {
         
     }
     
-    func adjustCardNumber(by offset: Int, symbol: String) -> some View{
+    func adjustCardNumber(by offset: Int, symbol: String) -> some View {
         Button(action: {
             numberCard += offset
-        }, label: {
-            Image(systemName: symbol)
-                .font(.largeTitle)
+        } , label: {
+        Image(systemName: symbol)
+            .font(.largeTitle)
         })
         .disabled(numberCard + offset < 2 || numberCard + offset > cardChooser().0.count)
     }
 
     var addCard: some View{
-        return adjustCardNumber(by: 2, symbol: "plus.rectangle")
+        return adjustCardNumber(by: 2, symbol: "plus")
     }
     
     var removeCard: some View{
-        return adjustCardNumber(by: -2, symbol: "minus.rectangle")
+        return adjustCardNumber(by: -2, symbol: "minus")
     }
 }
 
